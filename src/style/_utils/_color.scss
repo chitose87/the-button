@@ -1,0 +1,69 @@
+// color
+
+$color-green: #01916d !default;
+$color-green-300: $color-green !default;
+$color-green-400: #018463 !default;
+
+$color-red: #fb0020 !default;
+$color-red-300: $color-red !default;
+$color-red-400: #e70924 !default;
+
+$color-orange: #fa5700 !default;
+$color-brown: #b2880a !default;
+
+$color-snow-white: #f9fbfb !default;
+$color-cream: #fff5d3 !default;
+$color-salmon-pink: #ffefeb !default;
+
+// グレースケール
+$color-white: #fff !default;
+// ↓
+$color-gray-600: #f6f6f6 !default;
+$color-gray-500: #dcdcdc !default;
+$color-gray-400: #8c8c8c !default;
+$color-gray-300: #707070 !default;
+$color-gray-200: #4a4a4a !default; // FH
+$color-gray-100: #333 !default;
+
+$color-gray-lightest: $color-gray-600 !default;
+$color-gray-lighter: $color-gray-500 !default;
+$color-gray-light: $color-gray-400 !default;
+$color-gray: $color-gray-300 !default; // ベース色
+$color-gray-darkest: $color-gray-100 !default;
+// ↑
+$color-black: #000 !default;
+
+// semantic name
+$color-border: $color-gray-400 !default;
+$color-border-alpha: rgba($color-black, .1) !default;
+$color-text: $color-gray-100 !default;
+$color-text-white: $color-white !default;
+$color-attention: $color-red-400 !default;
+$color-link: $color-green-400 !default;
+$color-modal-bg: rgba($color-black, .5) !default;
+
+// 2018/10/22　下記未設定
+
+// リンク
+
+//$color-link: $color-gray-darkest !default;
+
+// ボタンカラー
+
+//$color-button-background: $color-gray-light !default;
+//$color-button-font: $color-gray-darkest !default;
+//$color-button-active-background: $color-gray-darkest !default;
+//$color-button-active-font: $color-white !default;
+
+// フィルター
+
+//$color-filter: rgba(0, 0, 0, 0.5) !default;
+//$color-filter-light: rgba(255, 255, 255, 0.2) !default;
+
+// ラベル
+
+//$color-must: #e80707 !default;
+
+// ハイライト
+
+//$color-highlight: #ff0 !default;

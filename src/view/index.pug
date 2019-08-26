@@ -1,0 +1,20 @@
+block op
+  -var name="";
+  -var isEdit=true;
+
+doctype html
+html(lang='ja')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0')
+    link(rel='icon', href='<%= BASE_URL %>favicon.ico')
+    title draft-mgr/#{name}
+
+    script(type="text/javascript" src="//typesquare.com/3/tsad/script/ja/typesquare.js?5c8ee9dcb3f849ba83987d17ac1e024a" charset="utf-8")
+  body(class=name)
+    #app
+
+    script(src='https://www.gstatic.com/firebasejs/4.12.1/firebase.js')
+    // built files will be auto injected
+    script(src='/common/script/common.js')

@@ -1,0 +1,220 @@
+@import "color";
+@import "mediaquery";
+@import "screen";
+@import "zindex";
+@import "ease";
+
+// size
+$c-mt: 2rem;
+$c-mb: 1rem;
+$size-container: (64 * 12) + (32px * 11) + (16 * 4);
+
+$size-col: (
+  1: calc(100% / 12),
+  2: calc(100% / 6),
+  3: 25%,
+  4: calc(100% / 3),
+  5: calc(100% / 2.4),
+  6: 50%,
+  7: calc(100% / 12 * 7),
+  8: calc(100% / 1.5),
+  9: 75%,
+  10: calc(100% / 1.2),
+  11: calc(100% / 12 * 11),
+  12: 100%
+);
+
+@mixin col($v) {
+  //-ms-flex: 0 $v;
+  flex: 0 0 map-get($size-col, $v);
+  max-width: map-get($size-col, $v);
+}
+
+// time
+$tick: 0.4s;
+
+// effect
+$shadow: 0 2px 5px rgba(0, 0, 0, 0.4) !default;
+$shadow-inset: 0 12px 5px -10px rgba(0, 0, 0, 0.4) inset !default;
+$shadow-zero: 0 0 0 rgba(0, 0, 0, 0.4) !default;
+$shadow-depth--1: 0 3px 4px rgba(0, 0, 0, 0.5);
+
+//bootstrap.sass value
+$gutter: 2rem;
+$grid-gutter-width: $gutter;
+$grid-columns: 12;
+
+// icon
+
+@mixin cross($w, $h, $color, $deg,$noPosition) {
+  &:before, &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: $color;
+    width: $w;
+    height: $h;
+    @if $noPosition==false {
+      top: 50%;
+      left: 50%;
+    }
+    @content;
+  }
+  &:before {
+    transform: translateX(-50%) rotate($deg);
+  }
+  &:after {
+    transform: translateX(-50%) rotate($deg + 90deg);
+  }
+}
+
+@mixin clamp($num,$lh:1.75) {
+  max-height: calc(#{$num}em * #{$lh}); //fall back
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+}
+
+@mixin _icon() {
+  font-family: "fontello", serif;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+}
+
+
+@mixin icon-arrow_right {
+  @include _icon;
+  content: '\e800';
+}
+
+@mixin icon-alert {
+  @include _icon;
+  content: '\e801';
+}
+
+@mixin icon-arrow_upper {
+  @include _icon;
+  content: '\e802';
+}
+
+@mixin icon-arrow-down {
+  @include _icon;
+  content: '\e803';
+}
+
+@mixin icon-arrow-left {
+  @include _icon;
+  content: '\e804';
+}
+
+@mixin icon-blank {
+  @include _icon;
+  content: '\e805';
+}
+
+@mixin icon-bookmark {
+  @include _icon;
+  content: '\e806';
+}
+
+@mixin icon-check {
+  @include _icon;
+  content: '\e807';
+}
+
+@mixin icon-close {
+  @include _icon;
+  content: '\e808';
+}
+
+@mixin icon-document {
+  @include _icon;
+  content: '\e809';
+}
+
+@mixin icon-expansion {
+  @include _icon;
+  content: '\e80a';
+}
+
+@mixin icon-download {
+  @include _icon;
+  content: '\e80b';
+}
+
+@mixin icon-hamburger {
+  @include _icon;
+  content: '\e80c';
+}
+
+@mixin icon-search {
+  @include _icon;
+  content: '\e80d';
+}
+
+@mixin icon-info {
+  @include _icon;
+  content: '\e80e';
+}
+
+@mixin icon-minus {
+  @include _icon;
+  content: '\e80f';
+}
+
+@mixin icon-plus {
+  @include _icon;
+  content: '\e810';
+}
+
+@mixin icon-zoom {
+  @include _icon;
+  content: '\e811';
+}
+
+@mixin icon-share {
+  @include _icon;
+  content: '\e812';
+}
+
+//utils
+
+@mixin dummy($path,$w,$h) {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    pointer-events: none;
+    background-image: url($path);
+    background-size: #{$w}px #{$h}px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    opacity: 0.2;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: #{$h}px;
+  }
+}
+
+
+@mixin font-weight-bold {
+  font-family: "Clarimo UD PE DemiBold", "UD Shin Go Conde90 DB JIS2004";
+}
+
+@mixin font-weight-normal {
+  font-family: "Clarimo UD PE Regular", "UD Shin Go Regular JIS2004";
+}
+
+// 共通cssにするか悩み
+@mixin hr-style {
+  display: block;
+  background-color: $color-gray-600;
+  width: 100%;
+  height: 4rem;
+  box-shadow: $shadow-inset;
+}
